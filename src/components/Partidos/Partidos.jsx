@@ -3,12 +3,6 @@ import { Equipo } from "../../pages/Equipo"
 
 export const Partidos = ({ partidos }) => {
     // console.log(partidos)
-    const handleOnSubmit = (e) => {
-        e.preventDefault();
-        console.log(e.target.value)
-    };
-    const [equipo, setEquipo] = useState(0)
-
     return (
         <>
             {
@@ -17,8 +11,6 @@ export const Partidos = ({ partidos }) => {
                         <Equipo
                             key={index}
                             equipo={elem}
-                            inputValue={equipo}
-                            onChange={setEquipo}
                         />
                     )
                 })

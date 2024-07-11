@@ -4,6 +4,7 @@ import ErrorPage from "./components/Error/Error";
 import Loading from "./components/Loading/Loading";
 import { Partidos } from "./components/Partidos/Partidos";
 import { useBuscarInfo } from "./hooks/useBuscarInfo";
+import { Home } from "./pages/Home/Home";
 
 const App = () => {
   const { data, loading, error } = useBuscarInfo();
@@ -15,7 +16,12 @@ const App = () => {
   if (error) {
     return <ErrorPage error={error} />;
   }
-  return <Partidos partidos={data}/>;
+  return (
+    // <Partidos partidos={data} />
+    <Home
+      data={data}
+    />
+  )
 };
 
 export default App;
