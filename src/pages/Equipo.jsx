@@ -1,10 +1,11 @@
 import { useState } from "react"
 import "./equipo.css";
+import {calcularPuntaje} from "../utils/procesarPartidos";
 
 export const Equipo = ({ equipo, inputValue, onChange }) => {
     const [inputs, setInputs] = useState({
-        equipo1: "",
-        equipo2: ""
+        equipo1: 0,
+        equipo2: 0
     });
 
     const handleChange = (event) => {
@@ -14,23 +15,11 @@ export const Equipo = ({ equipo, inputValue, onChange }) => {
       setInputs(values => ({...values, [name]: value}))
     }
   
-    // const handleSubmit = (event) => {
-    //   event.preventDefault();
-    //   alert(`The name you entered was: ${name}`)
-    // }
-  
-    // return (
-    //   <form onSubmit={handleSubmit}>
-    //     <label>Enter your name:
-    //       <input 
-    //         type="text" 
-    //         value={name}
-    //         onChange={(e) => setName(e.target.value)}
-    //       />
-    //     </label>
-    //     <input type="submit" />
-    //   </form>
-    // )
+     const handleSubmit = (event) => {
+       event.preventDefault();
+       const puntaje = calcularPuntaje(equipo, Number(inputs.equipo1), Number(inputs.equipo2));
+       alert(`Tu puntaje es de: ${puntaje}`)
+     }
 
     return (
         <form>
@@ -41,14 +30,15 @@ export const Equipo = ({ equipo, inputValue, onChange }) => {
                             <h4>{elem.name}</h4>
                             <img src={elem.flag} alt={`${elem.name}-flag`} />
                             <label htmlFor="Name">
-                                <input  type="number" class='input-equipo' id="team-1" name="team-1" onChange={handleChange}/>
+
+                                <input type="number" value={inputs[`equipo${index+1}`]} id={index} name={`equipo${index+1}`} onChange={handleChange}/>
                             </label>
                         </div>
                     )
                 })
             }
              <label htmlFor="Name">
-                <input type="submit" id="team-1" name="team-1" />
+                <input onClick={handleSubmit} type="submit" id="team-1" name="team-1" />
             </label>
         </form>
     )

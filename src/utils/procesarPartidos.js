@@ -1,30 +1,35 @@
 import { COINCIDENCIA_EXACTA,ADIVINAR_GANADOR,ADIVINAR_LADO } from "../constants/puntos"
-const partido = {
-    id:1,
-    stage:"final",
-    score:[
-      {
-        team:"id",
-        name:"arg",
-        goals:2,
-        flag:"jeje",
-        side:"local"
-      },
-      {
-        name:"colombia",
-        goals:0,
-        side:"visit",
-        flag:"ee"
- 
-      }
-    ],
-    penalties:null,
-    stadium:3,
-  }
-const coincidenciaExacta = (inpLocal,inpVisitor) =>{
+
+const coincidenciaExacta = (partido, inpLocal,inpVisitor) =>{
     const [local,visitor]  = partido.score
-    if (local.goals === inpLocal && visitor.goals === inpVisitor)
-    return COINCIDENCIA_EXACTA;
+    return (local.goals === inpLocal && visitor.goals === inpVisitor)  ? COINCIDENCIA_EXACTA : 0;
+}
+const coincidenciaLado = (partido, inpLocal,inpVisitor) =>{
+  const [local,visitor]  = partido.score
+  let total =0;
+  local.goals === inpLocal ? 
+    visitor.goals === inpVisitor ? total+=ADIVINAR_LADO*2  : total+=ADIVINAR_LADO 
+    : visitor.goals === inpVisitor ? total+=ADIVINAR_LADO  : 0
+  return total
+}
+const adivinaGanador = (partido, inpLocal,inpVisitor) =>{
+  const [local,visitor]  = partido.score
+  let ganador = {}
+
+  if(local.goals > visitor.goals){
+    ganador = local;
+  }else{
+    ganador = visitor;
+  }
+  return ganador.side === "visitor" ?  ganador.goals=== inpVisitor ? ADIVINAR_GANADOR : 0 
+  : ganador.goals === inpLocal ? ADIVINAR_GANADOR : 0  
 }
 
-console.log(coincidenciaExacta(2,0));
+export const calcularPuntaje = (partido, inpLocal, inpVisitor)=>{
+  let puntaje=0;
+  puntaje += coincidenciaLado(partido, inpLocal, inpVisitor);
+  puntaje += adivinaGanador(partido, inpLocal, inpVisitor);
+  puntaje += coincidenciaExacta(partido, inpLocal, inpVisitor);
+
+  return puntaje;
+}
