@@ -24,7 +24,7 @@ const partido = {
 const coincidenciaExacta = (inpLocal,inpVisitor) =>{
     const [local,visitor]  = partido.score
     if (local.goals === inpLocal && visitor.goals === inpVisitor)
-    return 3
+    return COINCIDENCIA_EXACTA;
 }
 
 console.log(coincidenciaExacta(2,0));
