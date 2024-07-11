@@ -31,7 +31,7 @@ export const Equipo = ({ equipo, inputValue, onChange }) => {
                             <img src={elem.flag} alt={`${elem.name}-flag`} />
                             <label htmlFor="Name">
 
-                                <input type="number" value={inputs[`equipo${index+1}`]} id={index} name={`equipo${index+1}`} onChange={handleChange}/>
+                                <input type="number" className="input-equipo" value={inputs[`equipo${index+1}`]} id={index} name={`equipo${index+1}`} onChange={handleChange}/>
                             </label>
                         </div>
                     )
