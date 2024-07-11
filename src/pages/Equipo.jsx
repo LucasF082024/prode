@@ -17,8 +17,14 @@ export const Equipo = ({ equipo, inputValue, onChange }) => {
   
      const handleSubmit = (event) => {
        event.preventDefault();
-       const puntaje = calcularPuntaje(equipo, Number(inputs.equipo1), Number(inputs.equipo2));
-       alert(`Tu puntaje es de: ${puntaje}`)
+       try {
+        console.log(equipo);
+        const puntaje = calcularPuntaje(equipo, Number(inputs.equipo1), Number(inputs.equipo2));
+        alert(`Tu puntaje es de: ${puntaje}`)
+       } catch (error) {
+            console.error(error);
+       }
+       
      }
 
     return (
