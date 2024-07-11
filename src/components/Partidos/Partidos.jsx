@@ -11,7 +11,7 @@ export const Partidos = ({ partidos }) => {
     const [equipo, setEquipo] = useState(0)
 
     return (
-        <div class="partidos">
+        <div className="partidos">
             {
                 partidos.map((elem, index) => {
                     return (
