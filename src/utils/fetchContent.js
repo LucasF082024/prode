@@ -1,4 +1,4 @@
-const API_BASE = "https://bootcamp-2024-2d43236510d5.herokuapp.com/";
+const API_BASE = "https://bootcamp-2024-2d43236510d5.herokuapp.com/prode/";
 
 export const fetchContent = async (url) => {
   try {

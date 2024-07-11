@@ -1,3 +1,2 @@
-export { ServicioRespuestas } from "./respuestas";
-export { ServicioExamenes } from "./examenes";
-export { ServicioAlumnos } from "./alumnos";
+export {ServicioEquipos} from "./equipos";
+export {ServicioPartidos} from "./partidos"
