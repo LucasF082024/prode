@@ -1,11 +1,11 @@
 import "./puntaje.css"
-export const Puntaje = () => {
+export const Puntaje = ({value=0}) => {
 
     
     return (
         <section>
             <h4>Puntos Totales:</h4>
-            <p>9pts</p>
+            <p>{value}</p>
         </section>
     )
 }

@@ -15,7 +15,8 @@ const coincidenciaLado = (score, inpLocal,inpVisitor) =>{
 const adivinaGanador = (score, inpLocal,inpVisitor) =>{
   const [local,visitor]  = score
   let ganador = {}
-
+  if(local.goals === visitor.goals) return 0;
+  
   if(local.goals > visitor.goals){
     ganador = local;
   }else{
@@ -29,15 +30,7 @@ export const calcularPuntaje = (partido, inpLocal, inpVisitor)=>{
   const {score, penalties} = partido;
   let puntaje=0;
   if (typeof inpLocal !== "number" || typeof inpVisitor !== "number") throw new Error ("Surgio un error con los valores ingresados")
-  
-  if (partido.penalties) {
-    puntaje += coincidenciaLado(penalties, inpLocal, inpVisitor);
-    puntaje += adivinaGanador(penalties, inpLocal, inpVisitor);
-    puntaje += coincidenciaExacta(penalties, inpLocal, inpVisitor);
-    return puntaje;
-  }
-  
-  
+    
   puntaje += coincidenciaLado(score, inpLocal, inpVisitor);
   puntaje += adivinaGanador(score, inpLocal, inpVisitor);
   puntaje += coincidenciaExacta(score, inpLocal, inpVisitor);
