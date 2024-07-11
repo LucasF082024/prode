@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Equipo } from "../../pages/Equipo"
+import "./partidos.css"
 
 export const Partidos = ({ partidos }) => {
     // console.log(partidos)
@@ -10,15 +11,14 @@ export const Partidos = ({ partidos }) => {
     const [equipo, setEquipo] = useState(0)
 
     return (
-        <>
+        <div class="partidos">
             {
                 partidos.map((elem, index) => {
                     return (
                         <Equipo
                             key={index}
                             equipo={elem}
-                            inputValue={equipo}
-                            onChange={setEquipo}
+                           
                         />
                     )
                 })
@@ -31,7 +31,7 @@ export const Partidos = ({ partidos }) => {
                     onChange={setEquipo}
                 />
             </label> */}
-        </>
+        </div>
     )
 }
 

@@ -1,0 +1,56 @@
+form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+
+    background-color: #c71c1c;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px auto;
+    gap: 6px;
+  }
+  
+  form > div {
+    display: flex;
+   
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff8e;
+    padding: 15px;
+    margin-bottom: 2px;
+    border-radius: 10px;
+    width: 100%;
+    
+  }
+
+  form > div:nth-child(even) {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  
+  form > div h4 {
+    margin: 0;
+    font-size: 1em;
+    color: #333;
+  }
+  
+  form > div img {
+    margin-top: 10px;
+    width: 50px;
+    height: 35px;
+  }
+
+  .input-equipo {
+    border: 0;
+    border-radius: 6px;
+    background-color: rgb(0, 0, 0);
+    width: 60px;
+    
+  }
+  
+  
+  form input[type="submit"]:hover {
+    background-color: #17970b;
+  }
+  

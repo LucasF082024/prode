@@ -1,4 +1,5 @@
 import { useState } from "react"
+import "./equipo.css";
 
 export const Equipo = ({ equipo, inputValue, onChange }) => {
     const [inputs, setInputs] = useState({
@@ -40,7 +41,7 @@ export const Equipo = ({ equipo, inputValue, onChange }) => {
                             <h4>{elem.name}</h4>
                             <img src={elem.flag} alt={`${elem.name}-flag`} />
                             <label htmlFor="Name">
-                                <input type="number" id="team-1" name="team-1" onChange={handleChange}/>
+                                <input  type="number" class='input-equipo' id="team-1" name="team-1" onChange={handleChange}/>
                             </label>
                         </div>
                     )

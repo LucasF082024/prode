@@ -1,0 +1,9 @@
+.partidos{
+    width: auto;
+    position: relative ;
+    right: 30%;
+    background-color: rgb(119, 0, 93);
+    padding:1em;
+    border-radius: 50px;
+
+}

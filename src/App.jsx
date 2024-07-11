@@ -1,4 +1,4 @@
-import { partidos } from "../mockUp/partido";
+//import { partidos } from "../mockUp/partido";
 import "./App.css";
 import ErrorPage from "./components/Error/Error";
 import Loading from "./components/Loading/Loading";
