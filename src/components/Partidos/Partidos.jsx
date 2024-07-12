@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Equipo } from "../../pages/Equipo"
 import "./partidos.css"
 
-export const Partidos = ({ partidos, setValue }) => {
+export const Partidos = ({ partidos }) => {
     // console.log(partidos)
     const handleOnSubmit = (e) => {
         e.preventDefault();
@@ -18,7 +18,6 @@ export const Partidos = ({ partidos, setValue }) => {
                         <Equipo
                             key={index}
                             equipo={elem}
-                            setValue={setValue}
                         />
                     )
                 })

@@ -2,7 +2,7 @@ import { useState } from "react"
 import "./equipo.css";
 import {calcularPuntaje} from "../utils/procesarPartidos";
 
-export const Equipo = ({ equipo, inputValue, onChange, setValue}) => {
+export const Equipo = ({ equipo, inputValue, onChange}) => {
     const [inputs, setInputs] = useState({
         equipo1: 0,
         equipo2: 0
@@ -20,7 +20,7 @@ export const Equipo = ({ equipo, inputValue, onChange, setValue}) => {
        try {
         console.log(equipo);
         const puntaje = calcularPuntaje(equipo, Number(inputs.equipo1), Number(inputs.equipo2));
-        setValue(prev => prev +puntaje);
+        
         alert(`Tu puntaje es de: ${puntaje}`)
        } catch (error) {
             console.error(error);
