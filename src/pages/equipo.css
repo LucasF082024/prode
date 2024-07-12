@@ -1,4 +1,4 @@
-form {
+#form {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -11,7 +11,7 @@ form {
     gap: 6px;
   }
   
-  form > div {
+  #form > div {
     display: flex;
    
     justify-content: space-between;
@@ -24,18 +24,18 @@ form {
     
   }
 
-  form > div:nth-child(even) {
+  #form > div:nth-child(even) {
     display: flex;
     flex-direction: row-reverse;
   }
   
-  form > div h4 {
+  #form > div h4 {
     margin: 0;
     font-size: 1em;
     color: #333;
   }
   
-  form > div img {
+  #form > div img {
     margin-top: 10px;
     width: 50px;
     height: 35px;
@@ -50,7 +50,7 @@ form {
   }
   
   
-  form input[type="submit"]:hover {
+  #form input[type="submit"]:hover {
     background-color: #17970b;
   }
   

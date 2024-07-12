@@ -1,0 +1,32 @@
+@import url("../index.css");
+#formContenedor{
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+}
+#formContenedor > form{
+    padding: 1rem;
+    color: #fff;
+    font-size: 1.2rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    justify-content: space-between;
+    background-color: #9999ff;
+    gap: 1rem;
+    border-radius: 5px;
+}
+
+form > input[type="submit"]:hover {
+    background-color: #17970b;
+  }
+
+button {
+    width: 60%;
+    padding: .5rem;
+    border-radius: 5px;
+    background-color: #000033;
+    color: #fff;
+    text-shadow: .5px .5px;
+}

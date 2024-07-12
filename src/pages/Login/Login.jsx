@@ -1,8 +1,9 @@
+import '../../styles/form.css'
 const Login = () => {
   return (
     <>
-    <h1>Login</h1>
     <div id="formContenedor">
+    <h1>Login</h1>
       <form>
         <label htmlFor="nameUser">Usuario</label>
         <input type="text" id="nameUser" name="loginForm" />

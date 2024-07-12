@@ -1,9 +1,9 @@
-import './Register.css'
+import '../../styles/form.css'
 const Register = () => {
   return (
     <>
-    <h1>Registro</h1>
     <div id="formContenedor">
+    <h1>Registro</h1>
       <form>
         <label htmlFor="nameUser">Usuario</label>
         <input type="text" id="nameUser" name="registerForm" />

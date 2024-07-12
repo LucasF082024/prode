@@ -29,7 +29,7 @@ export const Equipo = ({ equipo, inputValue, onChange, setValue}) => {
      }
 
     return (
-        <form>
+        <form id="form">
             {
                 equipo?.score.map((elem, index) => {
                     return (
