@@ -1,5 +1,6 @@
 export const RUTAS = {
     LOGIN : "login",
     REGISTER: "register",
-    PREDICTIONS: "predictions"
+    PREDICTIONS: "predictions",
+    HOME:"/"
 }
