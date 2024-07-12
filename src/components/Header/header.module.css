@@ -1,0 +1,36 @@
+.header{
+    padding: 0 2em;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(3, 69, 133);
+    color: white;
+}
+.titleContainer{
+    display: flex;
+    align-items: center;
+    padding-right: 1em;
+}
+.title{
+    font-weight: 800;
+    font-size: larger;
+
+}
+.titleContainer img{
+    height: 7.5em;
+    width: 7.5em;
+    filter: grayscale(100%) brightness(300%);
+}
+.navBar{
+    display: flex;
+    align-items: center;
+}
+.navBar ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.navBar ul li{
+    list-style: none;
+    padding: 0 1em;
+    font-weight: 600;
+}
