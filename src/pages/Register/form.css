@@ -1,0 +1,10 @@
+#formContenedor{
+    display: grid;
+    place-content: center;
+}
+#formContenedor > form{
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    gap: .7rem;
+}
