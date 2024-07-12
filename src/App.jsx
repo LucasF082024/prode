@@ -1,7 +1,7 @@
 //import { partidos } from "../mockUp/partido";
 import "./App.css";
 import ErrorPage from "./components/Error/Error";
-import { Home } from "./components/Home/Home";
+import Home from "./pages/Home/Home";
 import Loading from "./components/Loading/Loading";
 import { Partidos } from "./components/Partidos/Partidos";
 import { useBuscarInfo } from "./hooks/useBuscarInfo";
