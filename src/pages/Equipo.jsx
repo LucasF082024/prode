@@ -1,8 +1,9 @@
 import { useState } from "react"
 import "./equipo.css";
 import {calcularPuntaje} from "../utils/procesarPartidos";
+import { procesarUsuario } from "../utils/procesarUsuario";
 
-export const Equipo = ({ equipo, inputValue, onChange, setValue}) => {
+export const Equipo = ({ equipo, inputValue, onChange, setValue, user}) => {
     const [inputs, setInputs] = useState({
         equipo1: 0,
         equipo2: 0
@@ -20,6 +21,23 @@ export const Equipo = ({ equipo, inputValue, onChange, setValue}) => {
        try {
         console.log(equipo);
         const puntaje = calcularPuntaje(equipo, Number(inputs.equipo1), Number(inputs.equipo2));
+        console.log(puntaje);
+//
+        const match = {
+            match: equipo,
+            result: {
+                equipo1: inputs.equipo1,
+                equipo2: inputs.equipo2
+            },
+            score: puntaje
+        };
+
+    // Process the user
+    const updatedUser = procesarUsuario(user, match, puntaje);
+
+    // Find the user index and update the users array
+        console.log(updatedUser);
+//
         setValue(prev => prev +puntaje);
         alert(`Tu puntaje es de: ${puntaje}`)
        } catch (error) {

@@ -5,6 +5,9 @@ import { Home } from "./components/Home/Home";
 import Loading from "./components/Loading/Loading";
 import { Partidos } from "./components/Partidos/Partidos";
 import { useBuscarInfo } from "./hooks/useBuscarInfo";
+import { createUser, users } from "./utils/procesarUsuario";
+
+
 
 const App = () => {
   const { data, loading, error } = useBuscarInfo();
@@ -19,7 +22,7 @@ const App = () => {
   // return <Partidos partidos={data}/>;
   return (
     <Home
-      data={data}
+      data={data} 
     />
   )
 };

@@ -1,8 +1,13 @@
 import { useState } from "react";
 import { Equipo } from "../../pages/Equipo"
 import "./partidos.css"
+import { createUser } from "../../utils/procesarUsuario";
 
 export const Partidos = ({ partidos, setValue }) => {
+
+    const user = createUser(1, "Jon Snow");
+    
+
     // console.log(partidos)
     const handleOnSubmit = (e) => {
         e.preventDefault();
@@ -19,6 +24,7 @@ export const Partidos = ({ partidos, setValue }) => {
                             key={index}
                             equipo={elem}
                             setValue={setValue}
+                            user={user}
                         />
                     )
                 })
