@@ -1,0 +1,1 @@
+export const validarContraseña = (pass,rpass) => pass === rpass
