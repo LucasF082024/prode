@@ -1,7 +1,7 @@
 import { useState } from "react"
 import "./equipo.css";
 import {calcularPuntaje} from "../utils/procesarPartidos";
-import { procesarUsuario } from "../utils/procesarUsuario";
+import { procesarUsuario, users } from "../utils/procesarUsuario";
 
 export const Equipo = ({ equipo, inputValue, onChange, setValue, user}) => {
     const [inputs, setInputs] = useState({
@@ -19,10 +19,8 @@ export const Equipo = ({ equipo, inputValue, onChange, setValue, user}) => {
      const handleSubmit = (event) => {
        event.preventDefault();
        try {
-        console.log(equipo);
         const puntaje = calcularPuntaje(equipo, Number(inputs.equipo1), Number(inputs.equipo2));
-        console.log(puntaje);
-//
+
         const match = {
             match: equipo,
             result: {
@@ -32,14 +30,17 @@ export const Equipo = ({ equipo, inputValue, onChange, setValue, user}) => {
             score: puntaje
         };
 
-    // Process the user
-    const updatedUser = procesarUsuario(user, match, puntaje);
+        const updatedUser = procesarUsuario(user, match, puntaje);
 
-    // Find the user index and update the users array
-        console.log(updatedUser);
-//
-        setValue(prev => prev +puntaje);
-        alert(`Tu puntaje es de: ${puntaje}`)
+        const userIndex = users.findIndex(u => u.id === user.id);
+        if (userIndex !== -1) {
+            users[userIndex] = updatedUser;
+        } else {
+            console.error("User not found");
+        }
+
+        setValue(prev => prev + puntaje);
+        alert(`Tu puntaje es de: ${puntaje}`);
        } catch (error) {
             console.error(error);
        }

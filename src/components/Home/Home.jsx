@@ -9,7 +9,7 @@ export const Home = ({ data, user }) => {
     return (
         <>
             <Puntaje value={value}/>
-            <Partidos partidos={data} setValue={setValue} />
+            <Partidos partidos={data} setValue={setValue} user={user}/>
         </>
     )
 }

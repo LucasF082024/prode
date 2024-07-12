@@ -3,10 +3,9 @@ import { Equipo } from "../../pages/Equipo"
 import "./partidos.css"
 import { createUser } from "../../utils/procesarUsuario";
 
-export const Partidos = ({ partidos, setValue }) => {
+export const Partidos = ({ partidos, setValue, user }) => {
 
-    const user = createUser(1, "Jon Snow");
-    
+ 
 
     // console.log(partidos)
     const handleOnSubmit = (e) => {

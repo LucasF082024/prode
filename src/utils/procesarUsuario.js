@@ -1,22 +1,37 @@
+import { saveUsersToLocalStorage, loadUsersFromLocalStorage } from "./funcionesStorage";
+
+
 export const users = [];
 
-export const createUser = (id, name) => {
+export const createUser = (id, name, password) => {
     return {
         id,
         name,
+        password,
         matches: [],
         totalScore: 0
     };
-    
+
 };
 
 
 export const procesarUsuario = (usuario, match, score) => {
-    return {
+    const updatedUser = {
         ...usuario,
         matches: [...usuario.matches, match],
         totalScore: usuario.totalScore + score
     };
+
+    const userIndex = users.findIndex(u => u.id === usuario.id);
+    if (userIndex !== -1) {
+        users[userIndex] = updatedUser;
+    } else {
+        users.push(updatedUser);
+    }
+    saveUsersToLocalStorage(users);
+    console.log(users);
+
+    return updatedUser;
 };
 
 
