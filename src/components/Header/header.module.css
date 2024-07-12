@@ -34,3 +34,6 @@
     padding: 0 1em;
     font-weight: 600;
 }
+.navBar ul li:hover{
+    cursor: pointer;
+}
